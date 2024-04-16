@@ -8,8 +8,11 @@ package uvvflix;
  *
  * @author alunolab10
  */
-public class ator {
-    int idAtor;
-    String nome, papel;
+public class sala {
+    int idSala, numAssentos;
+    String tipoTela, localizacao;
+    
+    public void menu (){
+    
 }
-
+}
