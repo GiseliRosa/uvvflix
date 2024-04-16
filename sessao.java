@@ -8,8 +8,17 @@ package uvvflix;
  *
  * @author alunolab10
  */
-public class ator {
-    int idAtor;
-    String nome, papel;
-}
+public class sessao {
+    boolean statusSessao;
+    String horario;
+    
 
+    public String gethorario (){
+        return horario;
+        
+}
+    public void exibirhorario(){
+        System.out.println("O horário da sessão é:" + this.horario);
+    }
+    
+}
