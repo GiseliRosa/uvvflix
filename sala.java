@@ -8,11 +8,19 @@ package uvvflix;
  *
  * @author alunolab10
  */
+
 public class sala {
     int idSala, numAssentos;
     String tipoTela, localizacao;
     
-    public void menu (){
+    public Sala(int idSala, int numAssentos, String tipoTela, String localizacao) {
+        this.idSala = idSala;
+        this.numAssentos = numAssentos;
+        this.tipoTela = tipoTela;
+        this.localizacao = localizacao;
+            }
+
+            public void menu (){
     
-}
-}
+            }
+        }
