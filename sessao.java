@@ -6,7 +6,7 @@ public class sessao {
     boolean statusSessao;
     String horario;
     
-    ublic Sessao(String horario, Filme filme, Sala sala) {
+    public Sessao(String horario, Filme filme, Sala sala) {
         this.horario = horario;
         this.filme = filme;
         this.sala = sala;
