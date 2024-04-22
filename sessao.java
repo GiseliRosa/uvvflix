@@ -1,25 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+import java.util.ArrayList;
+import java.util.List;
+import uvvflix.filme;
+
 public class sessao {
+
     boolean statusSessao;
     String horario;
-    
-    public Sessao(String horario, Filme filme, Sala sala) {
-        this.horario = horario;
-        this.filme = filme;
-        this.sala = sala;
-        }
+    List<filme> filmes = new ArrayList<>();
 
-    public String gethorario (){
-        return horario;
-        
-}
-    public void exibirhorario(){
-        System.out.println("O horário da sessão é:" + this.horario);
+    
+    void cadastrar (filme f){
+        filmes.add(f);
     }
     
+    public sessao(String horario, boolean statusSessao) {
+        this.horario = horario;
+        this.statusSessao = statusSessao;
+    }
+
+    public String gethorario() {
+        return horario;
+
+    }
+
+    public void exibirhorario() {
+        System.out.println("O horário da sessão é:" + this.horario);
+    }
+
 }
-
-
