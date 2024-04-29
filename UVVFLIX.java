@@ -1,4 +1,5 @@
 package uvvflix;
+import java.util.ArrayList;
 
 
 public class UVVFLIX {
@@ -15,6 +16,17 @@ public class UVVFLIX {
    
     sala sala1 = new sala(1, 100, "3D", "Centro");
     sala sala2 = new sala(2, 80, "2D", "Lateral");
+    
+    sala sa = new sala();
+    sessao se = new sessao();
+    filme fi = new filme();
+    ator at = new ator();
+    String funcao;
+   // Métodos para manipulação da Sessão (CRUD)(cadastrar por profundidade, usar um loop e seguir o fluxo do proprio esquema)
 
     }
-    }
+   
+   
+   
+    
+}
