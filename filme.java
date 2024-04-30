@@ -20,6 +20,10 @@ public class filme {
         this.genero = genero;
         this.duracao = duracao;
     }
+
+    void adicionarAtor(Ator ator) {
+        atores.add(ator);
+    }
     
     String getTitulo() {
         return titulo;
