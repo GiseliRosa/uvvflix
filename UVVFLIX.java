@@ -6,6 +6,9 @@ public class UVVFLIX {
 
  
     public static void main(String[] args) {
+     uvvflix uvv = new uvv();
+        uvvflix.iniciarCadastro();
+     }
  
     ator ator01= new ator( "Timothee Chalamet", "Paul");
     ator ator02 = new ator( "Hailee Steinfeld", "Emily Dickinson");
@@ -20,7 +23,7 @@ public class UVVFLIX {
     private ArrayList<Sala> salas;
 
 
-     uvvflix() {
+     uvv() {
         salas = new ArrayList<>();
     }
 
