@@ -17,16 +17,64 @@ public class UVVFLIX {
     sala sala1 = new sala(1, 100, "3D", "Centro");
     sala sala2 = new sala(2, 80, "2D", "Lateral");
     
-    sala sa = new sala();
-    sessao se = new sessao();
-    filme fi = new filme();
-    ator at = new ator();
-    String funcao;
-   // Métodos para manipulação da Sessão (CRUD)(cadastrar por profundidade, usar um loop e seguir o fluxo do proprio esquema)
+    private ArrayList<Sala> salas;
 
+
+     uvvflix() {
+        salas = new ArrayList<>();
     }
-   
-   
-   
-    
-}
+
+     void iniciarCadastro() {
+        int numeroSalas = InOut.leInt("Quantas salas você deseja cadastrar?");
+
+        for (int i = 0; i < numSalas; i++) {
+            int assentos = InOut.leInt("Número de assentos da sala " + (i + 1)+":");
+            String tela = InOut.leString("Tipo de tela da sala  " + (i + 1)+" (ex: IMAX):");
+            String local = InOut.leString("Local da sala " + (i + 1)+":");
+
+            Sala sala = new Sala(assentos, tela, local);
+            cadastrarSessoes(sala);
+
+            salas.add(sala);
+        }
+    }
+
+     void cadastrarSessoes(Sala sala) {
+        int numSessoes = InOut.leInt("Quantas sessões para a sala " + sala.getLocal() + "?");
+        for (int i = 0; i < numSessoes; i++) {
+            String status = InOut.leString("Status da sessão" + (i + 1)+" (ex: disponível, lotado):");
+            String horario =InOut.leString("Horário da sessão  " + (i + 1)+"(HH:mm):");
+
+            Sessao sessao = new Sessao(status, horario);
+            cadastrarFilmes(sessao);
+
+            sala.adicionarSessao(sessao);
+        }
+    }
+
+     void cadastrarFilmes(Sessao sessao) {
+        int numFilmes = InOut.leInt("Quantos filmes para a sessão às " + sessao.getHorario() + "?");
+
+        for (int i = 0; i < numFilmes; i++) {
+            String titulo = InOut.leString("Título do filme " + (i + 1)+":");
+            String genero = InOut.leString("Gênero do filme " + (i + 1)+":");
+            String duracao = InOut.leString("Duração do filme " + (i + 1)+" (em minutos):");
+
+            Filme filme = new Filme(titulo, genero, duracao);
+            cadastrarAtores(filme);
+
+            sessao.adicionarFilme(filme);
+        }
+    }
+
+     void cadastrarAtores(Filme filme) {
+        int numAtores = InOut.leInt("Quantos atores para o filme " + filme.getTitulo() + "?");
+
+        for (int i = 0; i < numAtores; i++) {
+            String nome = InOut.leString("Nome do ator " + (i + 1)+":");
+            String papel = InOut.leString("Papel do ator " + (i + 1)+":");
+
+            Ator ator = new Ator(nome, papel);
+            filme.adicionarAtor(ator);
+        }
+    }
