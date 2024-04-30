@@ -29,30 +29,30 @@ public class UVVFLIX {
 
         for (int i = 0; i < numSalas; i++) {
             int assentos = InOut.leInt("Número de assentos da sala " + (i + 1)+":");
-            String tela = InOut.leString("Tipo de tela da sala  " + (i + 1)+" (ex: IMAX):");
+            String tela = InOut.leString("tela da sala  " + (i + 1)+" (ex: IMAX):");
             String local = InOut.leString("Local da sala " + (i + 1)+":");
 
-            Sala sala = new Sala(assentos, tela, local);
+            Sala sa = new Sala(assentos, tela, local);
             cadastrarSessoes(sala);
 
-            salas.add(sala);
+            salas.add(sa);
         }
     }
 
-     void cadastrarSessoes(Sala sala) {
+     void cadastrarSessoes(Sala sa) {
         int numSessoes = InOut.leInt("Quantas sessões para a sala " + sala.getLocal() + "?");
         for (int i = 0; i < numSessoes; i++) {
             String status = InOut.leString("Status da sessão" + (i + 1)+" (ex: disponível, lotado):");
             String horario =InOut.leString("Horário da sessão  " + (i + 1)+"(HH:mm):");
 
-            Sessao sessao = new Sessao(status, horario);
-            cadastrarFilmes(sessao);
+            Sessao se = new Sessao(status, horario);
+            cadastrarFilmes(se);
 
-            sala.adicionarSessao(sessao);
+            sala.adicionarSessao(se);
         }
     }
 
-     void cadastrarFilmes(Sessao sessao) {
+     void cadastrarFilmes(Sessao se) {
         int numFilmes = InOut.leInt("Quantos filmes para a sessão às " + sessao.getHorario() + "?");
 
         for (int i = 0; i < numFilmes; i++) {
@@ -60,14 +60,14 @@ public class UVVFLIX {
             String genero = InOut.leString("Gênero do filme " + (i + 1)+":");
             String duracao = InOut.leString("Duração do filme " + (i + 1)+" (em minutos):");
 
-            Filme filme = new Filme(titulo, genero, duracao);
+            Filme fi = new Filme(titulo, genero, duracao);
             cadastrarAtores(filme);
 
-            sessao.adicionarFilme(filme);
+            sessao.adicionarFilme(fi);
         }
     }
 
-     void cadastrarAtores(Filme filme) {
+     void cadastrarAtores(Filme fi) {
         int numAtores = InOut.leInt("Quantos atores para o filme " + filme.getTitulo() + "?");
 
         for (int i = 0; i < numAtores; i++) {
