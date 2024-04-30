@@ -25,3 +25,4 @@ public class ator {
      String getPapel() {
         return papel;
     }
+}
